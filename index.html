@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Alexa-couchpotato by josephschmitt</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Alexa-couchpotato</h1>
+          <h2>A skill to ask Alexa about your Couch Potato queue.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/josephschmitt/alexa-couchpotato/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/josephschmitt/alexa-couchpotato/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/josephschmitt/alexa-couchpotato" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="couch-potato-alexa-skill" class="anchor" href="#couch-potato-alexa-skill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Couch Potato Alexa Skill</h1>
+
+<p>This is a skill built for Amazon's Alexa service that tells you about your Couch Potato queue. It
+allows you to ask Alexa the following:</p>
+
+<blockquote>
+<p>Alexa, ask Couch Potato to add The Godfather</p>
+
+<p>Alexa, ask Couch Potato if The Dark Knight is on the list</p>
+</blockquote>
+
+<p>If you're just getting started developing skills for Alexa, I'd recommend reading <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/getting-started-guide">Getting Started
+with the Alexa Skills
+Kit</a> and
+<a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function">Developing an Alexa Skill as a Lambda
+Function</a> to get familiar with the process.</p>
+
+<h2>
+<a id="configuring-the-skill" class="anchor" href="#configuring-the-skill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuring The Skill</h2>
+
+<p>To configure the skill, copy <code>default.env</code> to <code>.env</code> and fill in the correct values for <code>CP_URL</code>, which
+should point to your Couch Potato server, and <code>CP_API_KEY</code> which should have your server's API key.</p>
+
+<h2>
+<a id="testing-the-skill-locally" class="anchor" href="#testing-the-skill-locally" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing The Skill Locally</h2>
+
+<p>You can use <a href="https://github.com/motdotla/node-lambda">node-lambda</a> to test this skill locally. In
+the <code>test_events</code> directory are several event files you can use for testing, and they should map
+pretty well to each Intent. To test an intent, simply copy the contents of one of the json files in
+that directory and overwrite the contents of <code>event.json</code>. Then run <code>node-lambda run</code> from the
+command line.</p>
+
+<h2>
+<a id="setting-up-the-skill" class="anchor" href="#setting-up-the-skill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setting up the Skill</h2>
+
+<p>To set up the skill, head on over to <a href="https://developer.amazon.com/edw/home.html">Alexa skills kit
+development console</a> and add a new skill. Fill in the
+basic skill information however you choose. For Endpoint, you'll need to fill in your Lambda ARN
+which you'll get in the next step. Next, head on over to Interaction Model. In the Intent
+Schema field, copy and paste the contents of the <code>interaction_model/intent_schema.json</code> file. Then
+in the Sample Utterances field, copy and paste the contents of
+<code>interaction_model/sample_utterances.txt</code>.</p>
+
+<h2>
+<a id="hosting-the-skill" class="anchor" href="#hosting-the-skill" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hosting the Skill</h2>
+
+<p>The skill is built to be easily hosted on Amazon's <a href="https://aws.amazon.com/lambda/">AWS
+Lambda service</a>. Create your Lambda function (using the
+alexa-skills-kit-color-expert blueprint) and make sure you choose Node.js as the runtime. After
+you've created your Lambda function, look at the top right of the page to get your Lambda ARN
+number and put that in the Alexa Skill Information Endpoint field.</p>
+
+<p>To deploy to Lambda, first makes sure you do an <code>npm install</code> at the root of the project.
+Once all the dependencies are installed, run <code>npm run bundle</code>, which will create a lambda.zip file.
+You can then upload that zip file to Lambda for use in your function and skill.</p>
+
+<p>You can also use <a href="https://github.com/motdotla/node-lambda">node-lambda</a> to deploy to your Lambda
+function directly from the command line. Simply add a deploy.env file with your environment
+configuration (and double check the supplied .env file in this repository) and then run
+<code>node-lambda deploy</code>. Please visit the <a href="https://github.com/motdotla/node-lambda">node-lambda</a>
+project page for more information on deploying from the command line.</p>
+        </section>
+
+        <footer>
+          Alexa-couchpotato is maintained by <a href="https://github.com/josephschmitt">josephschmitt</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
